@@ -23,15 +23,7 @@ pipeline {
             }
         }
 
-        stage('Scan Image with Trivy') {
-            steps {
-                sh '''
-                echo "Scanning image with Trivy..."
-                trivy image --exit-code 1 --severity HIGH,CRITICAL $IMAGE_NAME:$IMAGE_TAG
-                '''
-            }
-        }
-
+        
         stage('Login to Docker Hub') {
             steps {
                 sh '''

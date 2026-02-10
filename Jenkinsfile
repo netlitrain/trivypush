@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         IMAGE_NAME = "trainerbpl10/webapp"
-        IMAGE_TAG  = "latest"
+        IMAGE_TAG  = "${BUILD_NUMBER}"
         DOCKER_CREDS = credentials('dockerhub-creds')
     }
 

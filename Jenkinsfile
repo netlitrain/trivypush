@@ -11,9 +11,7 @@ pipeline {
 
         stage('Fetch Code') {
             steps {
-                sh '''
-                git clone https://github.com/yourusername/yourrepo.git .
-                '''
+                git url:"https://github.com/netlitrain/trivypush.git", branch:"main"
             }
         }
 

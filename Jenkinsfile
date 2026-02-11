@@ -26,7 +26,7 @@ pipeline {
         stage('Image Check') {
             steps {
                 sh '''
-                docker scout cves $IMAGE_NAME:$IMAGE_TAG --only-severity critical,high
+                trivy image --severity CRITICAL --exit-code 1 $IMAGE_NAME:$IMAGE_TAG
                 '''
             }
         }
